@@ -90,50 +90,29 @@
             border: 1px solid var(--border); backdrop-filter: blur(5px);
         }
 
-        .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
+        .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
         
         .ach-card {
             background: rgba(255, 255, 255, 0.03); 
             backdrop-filter: blur(10px);
             border: 1px solid var(--border); border-radius: 1.25rem; 
-            padding: 2.5rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            padding: 2rem; transition: 0.4s;
             display: flex; flex-direction: column; justify-content: space-between;
         }
 
-        .ach-card:hover { 
-            transform: translateY(-10px) scale(1.02); 
-            border-color: var(--primary);
-            background: rgba(99, 102, 241, 0.08);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-        }
-        
-        .ach-card h3 { font-size: 1.25rem; margin-bottom: 1rem; }
-        .ach-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
-        .ach-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+        .ach-card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(99, 102, 241, 0.08); }
+        .ach-card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
 
-        .cert-btn { 
-            margin-top: 1.5rem; color: var(--primary); text-decoration: none; 
-            font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;
-        }
-
-        .poem-card { border-left: 5px solid var(--primary); }
-
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; }
         .social-card {
-            background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 1rem; 
+            background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 1rem; 
             text-align: center; text-decoration: none; color: var(--text-main); 
             border: 1px solid var(--border); transition: 0.3s;
         }
-        .social-card:hover { background: var(--primary); transform: translateY(-5px); border-color: transparent; }
+        .social-card i { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
+        .social-card:hover { background: var(--primary); transform: translateY(-5px); }
 
         footer { text-align: center; padding: 4rem 0; color: var(--text-dim); border-top: 1px solid var(--border); }
-
-        @media (max-width: 768px) { 
-            .section-title { font-size: 2.5rem; }
-            .profile-content h1 { font-size: 3rem; }
-            .nav-links { display: none; }
-            .edu-grid { grid-template-columns: 1fr; }
-        }
     </style>
 </head>
 <body>
@@ -150,16 +129,13 @@
     </nav>
 
     <div class="container">
-        
         <section id="profile" class="visible">
             <div class="profile-content">
                 <span class="badge">Data Science & AI Enthusiast</span>
                 <h1>Hi, I'm Chirag.</h1>
                 <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2.5rem;">
-                    Pursuing a dual focus at <strong>IIT Madras</strong> and <strong>SJEC</strong>. I bridge the gap between 
-                    analytical AI research and creative expression.
+                     As a BS student at <strong>IIT Madras</strong>, I am focused on the transformative potential of <strong>Prompt Engineering</strong>, Data Science, and AI. Beyond technical research, I am like composing new poems  and a <strong>hobby reader</strong> for a translation group.
                 </p>
-                
                 <div class="edu-grid" style="max-width: 600px;">
                     <div class="edu-item"><h4>IIT Madras</h4><p>BS in Data Science</p></div>
                     <div class="edu-item"><h4>SJEC Mangaluru</h4><p>BE in Computer Science</p></div>
@@ -169,33 +145,30 @@
 
         <section id="projects">
             <h2 class="section-title">Technical <span>Creations</span></h2>
-            <p class="section-subtitle">Code, algorithms, and full-stack solutions.</p>
-            <div class="item-grid" id="projects-container">
-                </div>
+            <div class="item-grid" id="projects-container"></div>
         </section>
 
         <section id="achievements">
             <h2 class="section-title">Key <span>Milestones</span></h2>
-            <p class="section-subtitle">Certifications and recognitions in AI and Tech.</p>
-            <div class="item-grid" id="achievements-container">
-                </div>
+            <div class="item-grid" id="achievements-container"></div>
         </section>
 
         <section id="poetry">
             <h2 class="section-title">Literary <span>Echoes</span></h2>
-            <p class="section-subtitle">Creative expressions from "Echoes of the Equinox".</p>
-            <div class="item-grid" id="poetry-container">
-                </div>
+            <div class="item-grid" id="poetry-container"></div>
         </section>
 
         <section id="socials">
             <h2 class="section-title">Connect with <span>Me</span></h2>
             <div class="social-grid">
                 <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card">
-                    <i class="fab fa-linkedin"></i><p>LinkedIn</p>
+                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
                 </a>
                 <a href="https://github.com/chiragalva" target="_blank" class="social-card">
-                    <i class="fab fa-github"></i><p>GitHub</p>
+                    <i class="fab fa-github"></i><span>GitHub</span>
+                </a>
+                <a href="mailto:chiragalva2005@gmail.com" class="social-card">
+                    <i class="fas fa-envelope"></i><span>Email</span>
                 </a>
             </div>
         </section>
@@ -208,67 +181,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-2. data.json (Updated with your Projects)
-I added your "Finance Lens" and "A* Pathfinding" projects into the projects array so they show up on the page.
-
-JSON
-{
-    "projects": [
-        {
-            "title": "Finance Lens",
-            "desc": "A comprehensive web application for financial tracking and analytics, developed as a student solution.",
-            "tech": ["Web Dev", "Full-Stack"],
-            "link": "https://github.com/chiragalva"
-        },
-        {
-            "title": "A* Pathfinding Visualizer",
-            "desc": "A visual tool to demonstrate the A* search algorithm's efficiency in finding the shortest path between nodes.",
-            "tech": ["Algorithms", "Python/JS"],
-            "link": "https://github.com/chiragalva"
-        }
-    ],
-    "achievements": [
-        {
-            "icon": "fa-certificate",
-            "badge": "Recognition",
-            "title": "Pi-sq Seminar Series Appreciation",
-            "desc": "Awarded for active participation and technical insights during the 'It’s All in the Prompt!' seminar under the ML Series Initiative, IIT Madras.",
-            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
-        },
-        {
-            "icon": "fa-cloud",
-            "badge": "Cloud Computing",
-            "title": "Google Cloud Skills Boost",
-            "desc": "Earned over 20+ professional badges in cloud infrastructure, data processing, and AI labs through the Google Developers program.",
-            "link": "https://developers.google.com/profile/u/107351941614381072848"
-        },
-        {
-            "icon": "fa-microchip",
-            "badge": "AI Optimization",
-            "title": "Prompt Engineering Mastery",
-            "desc": "Completed intensive training on optimizing LLM outputs and precision engineering through Waynad House initiatives, IITM BS.",
-            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
-        },
-        {
-            "icon": "fa-magnifying-glass-chart",
-            "badge": "Cybersecurity",
-            "title": "OSINT & Digital Investigation",
-            "desc": "Proficiency in Open Source Intelligence and cybersecurity investigations through the IIT Madras BS program.",
-            "link": "https://www.linkedin.com/posts/chirag-alva-32b500375_osint-cybersecurity-iitmadras-activity-7367486089789390849-oqjR"
-        },
-        {
-            "icon": "fa-shield-halved",
-            "badge": "Workshop",
-            "title": "Web Trapped: Cybersecurity 101",
-            "desc": "Successfully completed the vulnerability assessment series organized by Sundarbans House, IITM BS Degree programme.",
-            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
-        }
-    ],
-    "poetry": [
-        {
-            "title": "Echoes of the Equinox",
-            "excerpt": "Exploring the crucial moments when love shifts and transforms—bold yet delicate, fierce yet tender, fleeting yet eternal.",
-            "link": "https://docs.google.com/document/d/140vlyvVg3yMZcxzpb8_ipW7bhmwJ7ckLHM-IfmGa2FM/edit"
-        }
-    ]
-}
