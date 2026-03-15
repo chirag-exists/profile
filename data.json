@@ -1,0 +1,25 @@
+{
+    "achievements": [
+        {
+            "icon": "fa-microchip",
+            "badge": "AI Optimization",
+            "title": "Prompt Engineering Mastery",
+            "desc": "Completed the intensive seminar 'It's all in the prompt!' organized by the ML series initiative under Waynad House, IITM BS.",
+            "link": "#"
+        },
+        {
+            "icon": "fa-magnifying-glass-chart",
+            "badge": "Cybersecurity",
+            "title": "OSINT & Digital Investigation",
+            "desc": "Recognized for active participation and proficiency in Open Source Intelligence (OSINT) and cybersecurity investigations.",
+            "link": "https://www.linkedin.com/posts/chirag-alva-..."
+        },
+        {
+            "icon": "fa-shield-halved",
+            "badge": "Workshop",
+            "title": "Cybersecurity 101",
+            "desc": "Successfully completed the 'Web Trapped' workshop series organized by Sundarbans House IITM BS Degree programme.",
+            "link": "#"
+        }
+    ]
+}
