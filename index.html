@@ -13,8 +13,7 @@
             --accent: #0ea5e9;
             --bg-dark: #0a0e27;
             --bg-secondary: #1a1f3a;
-            --glass: rgba(15, 23, 42, 0.6);
-            --border: rgba(100, 116, 139, 0.15);
+            --border: rgba(255, 255, 255, 0.1);
             --text-main: #f1f5f9;
             --text-secondary: #cbd5e1;
             --text-dim: #94a3b8;
@@ -22,143 +21,127 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
-        html { font-size: 16px; }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Plus Jakarta Sans', sans-serif;
-            background: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-secondary) 100%);
+            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+            background: linear-gradient(-45deg, #0a0e27, #1a1f3a, #0f172a, #1e1b4b);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
             color: var(--text-main);
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
 
         nav {
-            position: fixed; width: 100%; padding: 1.5rem 2rem; display: flex;
+            position: fixed; width: 100%; padding: 1.2rem 2rem; display: flex;
             justify-content: space-between; align-items: center; z-index: 1000;
-            background: rgba(10, 14, 39, 0.7); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border);
+            background: rgba(10, 14, 39, 0.8); backdrop-filter: blur(12px); 
+            border-bottom: 1px solid var(--border);
         }
 
-        .logo { 
-            font-weight: 700; font-size: 1.2rem; letter-spacing: -0.5px;
-            color: var(--text-main);
-        }
+        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
         .logo span { color: var(--primary); }
 
-        .nav-links { display: flex; gap: 3rem; }
+        .nav-links { display: flex; gap: 2.5rem; }
         .nav-links a { 
             color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; 
-            font-weight: 500; transition: 0.3s ease; letter-spacing: 0.3px;
+            font-weight: 500; transition: 0.3s ease; 
         }
-        .nav-links a:hover { color: var(--text-main); }
+        .nav-links a:hover { color: var(--primary); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        section { padding: 5rem 0; }
-        .section-title { 
-            font-size: 3rem; margin-bottom: 1rem; font-weight: 700; 
-            letter-spacing: -1px; line-height: 1.1;
-        }
-        .section-subtitle {
-            color: var(--text-dim); font-size: 1rem; margin-bottom: 3rem;
-            font-weight: 500;
-        }
-        .section-title span { color: var(--primary); }
-
-        /* Profile Section */
-        .profile-grid { 
-            display: grid; grid-template-columns: 1fr; gap: 4rem; 
-            align-items: center; padding-top: 5rem;
+        section { 
+            padding: 8rem 0 4rem; 
+            opacity: 0; 
+            transform: translateY(30px); 
+            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
         }
         
-        .profile-content h1 {
-            font-size: 4rem; line-height: 1.1; margin-bottom: 1.5rem;
-            color: var(--text-main); font-weight: 700; letter-spacing: -1px;
-        }
+        section.visible { opacity: 1; transform: translateY(0); }
 
+        .section-title { 
+            font-size: 3.5rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -1.5px; 
+        }
+        .section-title span { 
+            background: linear-gradient(to right, var(--primary), var(--accent));
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        }
+        
+        .section-subtitle { color: var(--text-dim); margin-bottom: 4rem; font-size: 1.1rem; }
+
+        /* Profile Header */
+        .profile-content h1 { font-size: 5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
+        
         .badge {
-            background: rgba(99, 102, 241, 0.15); color: var(--primary);
-            padding: 0.5rem 1rem; border-radius: 0.375rem; font-weight: 600; font-size: 0.8rem;
+            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(14, 165, 233, 0.1));
+            color: var(--text-main); border: 1px solid var(--primary);
+            padding: 0.4rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.75rem;
             display: inline-block; margin-bottom: 1.5rem; text-transform: uppercase;
-            letter-spacing: 0.5px;
         }
 
         .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
         .edu-item { 
-            background: rgba(100, 116, 139, 0.05); padding: 1.5rem; 
-            border-radius: 0.5rem; border: 1px solid var(--border);
-        }
-        .edu-item h4 { 
-            color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-        .edu-item p { color: var(--text-dim); font-size: 0.85rem; }
-
-        /* Buttons & Tags */
-        .cta-button {
-            display: inline-block; padding: 0.75rem 2rem; background: var(--primary);
-            color: white; text-decoration: none; border-radius: 0.375rem;
-            font-weight: 600; font-size: 0.9rem; transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-        }
-        .cta-button:hover {
-            background: #4f46e5; transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
+            background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 1rem; 
+            border: 1px solid var(--border); backdrop-filter: blur(5px);
         }
 
-        .skills-tag-container { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
-        .skill-tag { 
-            background: rgba(100, 116, 139, 0.1); border: 1px solid var(--border); 
-            padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.85rem;
-            color: var(--text-secondary); transition: all 0.3s ease;
-        }
-        .skill-tag:hover { border-color: var(--primary); color: var(--text-main); }
-
-        /* Item Grids */
-        .item-grid { 
-            display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
-            gap: 2rem;
-        }
+        /* Modern Card Styling */
+        .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         
         .ach-card {
-            background: rgba(100, 116, 139, 0.05); border: 1px solid var(--border); 
-            border-radius: 0.75rem; padding: 2.5rem; transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.03); 
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            border: 1px solid var(--border); border-radius: 1.25rem; 
+            padding: 2.5rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex; flex-direction: column; justify-content: space-between;
         }
+
         .ach-card:hover { 
-            transform: translateY(-4px); 
-            border-color: rgba(99, 102, 241, 0.3);
-            background: rgba(100, 116, 139, 0.08);
+            transform: translateY(-10px) scale(1.02); 
+            border-color: var(--primary);
+            background: rgba(99, 102, 241, 0.08);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
         }
         
-        .ach-card h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+        .ach-card h3 { font-size: 1.25rem; margin-bottom: 1rem; }
         .ach-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
-        .ach-card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
-        
+        .ach-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
+
+        .skills-tag-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+        .skill-tag { 
+            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); 
+            padding: 0.3rem 0.8rem; border-radius: 0.5rem; font-size: 0.7rem; color: var(--accent);
+        }
+
         .cert-btn { 
-            display: inline-block; margin-top: 1.5rem; color: var(--primary); 
-            text-decoration: none; font-weight: 600; font-size: 0.85rem;
-            transition: 0.3s ease;
+            margin-top: 1.5rem; color: var(--primary); text-decoration: none; 
+            font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;
         }
-        .cert-btn:hover { color: var(--text-main); }
 
-        .poem-card { border-left: 4px solid var(--primary); }
-        .poem-excerpt { font-style: italic; color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem; }
+        .poem-card { border-left: 5px solid var(--primary); }
 
-        /* Socials */
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
+        /* Social Cards */
+        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
         .social-card {
-            background: rgba(100, 116, 139, 0.05); padding: 2rem; border-radius: 0.75rem; 
+            background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 1rem; 
             text-align: center; text-decoration: none; color: var(--text-main); 
-            border: 1px solid var(--border); transition: all 0.3s ease;
+            border: 1px solid var(--border); transition: 0.3s;
         }
-        .social-card:hover { background: var(--primary); color: white; transform: translateY(-4px); }
-        .social-card i { font-size: 2rem; margin-bottom: 1rem; display: block; }
+        .social-card:hover { background: var(--primary); transform: translateY(-5px); border-color: transparent; }
 
-        footer { text-align: center; padding: 3rem 0; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); }
+        footer { text-align: center; padding: 4rem 0; color: var(--text-dim); border-top: 1px solid var(--border); }
 
         @media (max-width: 768px) { 
             .section-title { font-size: 2.5rem; }
+            .profile-content h1 { font-size: 3rem; }
             .nav-links { display: none; }
-            .item-grid { grid-template-columns: 1fr; }
+            .edu-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -177,100 +160,28 @@
 
     <div class="container">
         
-        <section id="profile" class="profile-grid">
+        <section id="profile" class="visible">
             <div class="profile-content">
                 <span class="badge">Data Science & AI Enthusiast</span>
                 <h1>Hi, I'm Chirag.</h1>
-                <p>As a student at <strong>IIT Madras</strong> and <strong>SJEC</strong>, I am exploring the practical applications of <strong>Data Science, AI, and Prompt Engineering</strong>. Beyond my technical pursuits, I find pleasure in poetry and reading, finding a unique balance between analytical research and creative collaboration.</p>
-                <a href="#socials" class="cta-button">Get In Touch</a>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2.5rem;">
+                    Pursuing a dual focus at <strong>IIT Madras</strong> and <strong>SJEC</strong>. I bridge the gap between 
+                    analytical AI research and creative expression.
+                </p>
                 
-                <div style="margin-top: 3rem;">
-                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 500;">Education</p>
-                    <div class="edu-grid">
-                        <div class="edu-item"><h4>IIT Madras</h4><p>BS in Data Science</p></div>
-                        <div class="edu-item"><h4>SJEC Mangaluru</h4><p>BE in Computer Science</p></div>
-                    </div>
+                <div class="edu-grid" style="max-width: 600px;">
+                    <div class="edu-item"><h4>IIT Madras</h4><p>BS in Data Science</p></div>
+                    <div class="edu-item"><h4>SJEC Mangaluru</h4><p>BE in Computer Science</p></div>
                 </div>
             </div>
         </section>
 
         <section id="projects">
             <h2 class="section-title">Technical <span>Creations</span></h2>
-            <p class="section-subtitle">Practical applications of AI, algorithms, and full-stack development.</p>
+            <p class="section-subtitle">Code, algorithms, and full-stack solutions.</p>
             <div class="item-grid" id="projects-container"></div>
         </section>
 
         <section id="achievements">
-            <h2 class="section-title">Academic <span>Milestones</span></h2>
-            <p class="section-subtitle">Key achievements and recognitions throughout my journey</p>
-            <div class="item-grid" id="achievements-container"></div>
-        </section>
-
-        <section id="poetry">
-            <h2 class="section-title">Echoes of the <span>Equinox</span></h2>
-            <p class="section-subtitle">A collection of verses exploring the balance between logic and emotion.</p>
-            <div class="item-grid" id="poetry-container"></div>
-        </section>
-
-        <section id="socials">
-            <h2 class="section-title">Let's <span>Connect</span></h2>
-            <p class="section-subtitle">Reach out across these platforms</p>
-            <div class="social-grid">
-                <a href="mailto:25f2001656@ds.study.iitm.ac.in" class="social-card"><i class="fa-solid fa-envelope"></i><strong>Gmail</strong></a>
-                <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card"><i class="fa-brands fa-linkedin-in"></i><strong>LinkedIn</strong></a>
-                <a href="https://github.com/chirag-exists" target="_blank" class="social-card"><i class="fa-brands fa-github"></i><strong>GitHub</strong></a>
-            </div>
-        </section>
-    </div>
-
-    <footer><p>&copy; 2026 Chirag Alva | IIT Madras & SJEC</p></footer>
-
-    <script>
-        async function loadData() {
-            try {
-                const response = await fetch('data.json');
-                const data = await response.json();
-                
-                // Load Projects
-                if (data.projects) {
-                    document.getElementById('projects-container').innerHTML = data.projects.map(proj => `
-                        <div class="ach-card">
-                            <div>
-                                <div class="skills-tag-container" style="margin-bottom: 1rem;">
-                                    ${proj.tech ? proj.tech.map(t => `<span class="skill-tag" style="font-size: 0.7rem;">${t}</span>`).join('') : ''}
-                                </div>
-                                <h3>${proj.title}</h3>
-                                <p>${proj.desc}</p>
-                            </div>
-                            <a href="${proj.link}" target="_blank" class="cert-btn">View Source Code →</a>
-                        </div>
-                    `).join('');
-                }
-
-                // Load Achievements
-                document.getElementById('achievements-container').innerHTML = data.achievements.map(ach => `
-                    <div class="ach-card">
-                        <div><i class="fa-solid ${ach.icon}"></i><br><span class="badge">${ach.badge}</span><h3>${ach.title}</h3><p>${ach.desc}</p></div>
-                        ${ach.link && ach.link !== "#" ? `<a href="${ach.link}" target="_blank" class="cert-btn">View Milestone →</a>` : ''}
-                    </div>
-                `).join('');
-
-                // Load Poetry
-                document.getElementById('poetry-container').innerHTML = data.poetry.map(poem => `
-                    <div class="ach-card poem-card">
-                        <div>
-                            <span class="badge" style="background: rgba(14, 165, 233, 0.1); color: var(--accent);">Poem</span>
-                            <h3>${poem.title}</h3>
-                            <p class="poem-excerpt">"${poem.excerpt}"</p>
-                        </div>
-                        <a href="${poem.link}" target="_blank" class="cert-btn">Read Full Collection →</a>
-                    </div>
-                `).join('');
-
-            } catch (e) { console.error("Error loading JSON:", e); }
-        }
-        window.onload = loadData;
-    </script>
-</body>
-</html>
+            <h2 class="
 
