@@ -63,7 +63,7 @@
         }
         .section-title span { color: var(--primary); }
 
-        /* Hero/Profile Section */
+        /* Profile Section */
         .profile-grid { 
             display: grid; grid-template-columns: 1fr; gap: 4rem; 
             align-items: center; padding-top: 5rem;
@@ -81,11 +81,6 @@
             letter-spacing: 0.5px;
         }
 
-        .profile-content > p {
-            color: var(--text-secondary); font-size: 1rem; margin-bottom: 2rem;
-            line-height: 1.8; max-width: 500px;
-        }
-
         .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
         .edu-item { 
             background: rgba(100, 116, 139, 0.05); padding: 1.5rem; 
@@ -95,17 +90,9 @@
             color: var(--text-main); font-size: 0.95rem; margin-bottom: 0.5rem;
             font-weight: 600;
         }
-        .edu-item p { 
-            color: var(--text-dim); font-size: 0.85rem; 
-        }
+        .edu-item p { color: var(--text-dim); font-size: 0.85rem; }
 
-        .profile-image { text-align: center; }
-        .profile-image img {
-            width: 100%; max-width: 380px; border-radius: 0.75rem;
-            object-fit: cover; height: 400px;
-        }
-
-        /* CTA Button */
+        /* Buttons & Tags */
         .cta-button {
             display: inline-block; padding: 0.75rem 2rem; background: var(--primary);
             color: white; text-decoration: none; border-radius: 0.375rem;
@@ -117,31 +104,15 @@
             box-shadow: 0 8px 24px rgba(99, 102, 241, 0.25);
         }
 
-        /* Skills */
         .skills-tag-container { display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: 1.5rem; }
         .skill-tag { 
             background: rgba(100, 116, 139, 0.1); border: 1px solid var(--border); 
             padding: 0.5rem 1rem; border-radius: 0.375rem; font-size: 0.85rem;
             color: var(--text-secondary); transition: all 0.3s ease;
         }
-        .skill-tag:hover { 
-            border-color: var(--primary); background: rgba(99, 102, 241, 0.1);
-            color: var(--text-main);
-        }
+        .skill-tag:hover { border-color: var(--primary); color: var(--text-main); }
 
-        /* Card Styles */
-        .card {
-            background: rgba(100, 116, 139, 0.05); border: 1px solid var(--border);
-            border-radius: 0.75rem; padding: 2.5rem; transition: all 0.3s ease;
-        }
-
-        .card:hover {
-            background: rgba(100, 116, 139, 0.08);
-            border-color: rgba(99, 102, 241, 0.3);
-            transform: translateY(-4px);
-        }
-
-        /* Achievements & Poetry Grids */
+        /* Item Grids */
         .item-grid { 
             display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); 
             gap: 2rem;
@@ -158,15 +129,8 @@
             background: rgba(100, 116, 139, 0.08);
         }
         
-        .ach-card h3 { 
-            color: var(--text-main); font-size: 1.1rem; margin-bottom: 1rem;
-            font-weight: 600;
-        }
-        
-        .ach-card p { 
-            color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7;
-        }
-
+        .ach-card h3 { color: var(--text-main); font-size: 1.1rem; margin-bottom: 1rem; font-weight: 600; }
+        .ach-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         .ach-card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
         
         .cert-btn { 
@@ -176,14 +140,8 @@
         }
         .cert-btn:hover { color: var(--text-main); }
 
-        /* Poetry Cards */
-        .poem-card { 
-            border-left: 4px solid var(--primary); 
-        }
-        .poem-excerpt { 
-            font-style: italic; color: var(--text-secondary); 
-            font-size: 0.95rem; margin-top: 1rem; line-height: 1.7;
-        }
+        .poem-card { border-left: 4px solid var(--primary); }
+        .poem-excerpt { font-style: italic; color: var(--text-secondary); font-size: 0.95rem; margin-top: 1rem; }
 
         /* Socials */
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; }
@@ -192,26 +150,15 @@
             text-align: center; text-decoration: none; color: var(--text-main); 
             border: 1px solid var(--border); transition: all 0.3s ease;
         }
-        .social-card:hover { 
-            background: var(--primary); border-color: var(--primary);
-            color: white; transform: translateY(-4px);
-        }
+        .social-card:hover { background: var(--primary); color: white; transform: translateY(-4px); }
         .social-card i { font-size: 2rem; margin-bottom: 1rem; display: block; }
-        .social-card strong { display: block; margin-top: 0.5rem; font-weight: 600; }
 
-        footer { 
-            text-align: center; padding: 3rem 0; color: var(--text-dim); 
-            font-size: 0.85rem; border-top: 1px solid var(--border);
-        }
+        footer { text-align: center; padding: 3rem 0; color: var(--text-dim); font-size: 0.85rem; border-top: 1px solid var(--border); }
 
         @media (max-width: 768px) { 
-            .profile-grid, .edu-grid { grid-template-columns: 1fr; }
-            .section-title { font-size: 2rem; }
-            .profile-content h1 { font-size: 2.5rem; }
-            .item-grid { grid-template-columns: 1fr; }
+            .section-title { font-size: 2.5rem; }
             .nav-links { display: none; }
-            section { padding: 3rem 0; }
-            .profile-image { margin-top: 2rem; }
+            .item-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -221,6 +168,7 @@
         <div class="logo">Chirag<span>Alva</span></div>
         <div class="nav-links">
             <a href="#profile">Profile</a>
+            <a href="#projects">Projects</a>
             <a href="#achievements">Achievements</a>
             <a href="#poetry">Poetry</a>
             <a href="#socials">Connect</a>
@@ -233,34 +181,23 @@
             <div class="profile-content">
                 <span class="badge">Data Science & AI Enthusiast</span>
                 <h1>Hi, I'm Chirag.</h1>
-               <p>As a student at <strong>IIT Madras</strong> and <strong>SJEC</strong>, I am exploring the practical applications of <strong>Data Science, AI, and Prompt Engineering</strong>. Beyond my technical pursuits, I find pleasure in  poetry  and reading, finding a unique balance between analytical research and creative collaboration.
-               </p>
+                <p>As a student at <strong>IIT Madras</strong> and <strong>SJEC</strong>, I am exploring the practical applications of <strong>Data Science, AI, and Prompt Engineering</strong>. Beyond my technical pursuits, I find pleasure in poetry and reading, finding a unique balance between analytical research and creative collaboration.</p>
                 <a href="#socials" class="cta-button">Get In Touch</a>
                 
                 <div style="margin-top: 3rem;">
                     <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 500;">Education</p>
                     <div class="edu-grid">
-                        <div class="edu-item">
-                            <h4>IIT Madras</h4>
-                            <p>BS in Data Science</p>
-                        </div>
-                        <div class="edu-item">
-                            <h4>SJEC Mangaluru</h4>
-                            <p>BE in Computer Science</p>
-                        </div>
-                    </div>
-                </div>
-                
-                <div style="margin-top: 2rem;">
-                    <p style="color: var(--text-dim); font-size: 0.9rem; margin-bottom: 1rem; font-weight: 500;">Core Expertise</p>
-                    <div class="skills-tag-container">
-                        <span class="skill-tag">AI/ML</span>
-                        <span class="skill-tag">Prompt Engineering</span>
-                        <span class="skill-tag">OSINT</span>
-                        <span class="skill-tag">Python</span>
+                        <div class="edu-item"><h4>IIT Madras</h4><p>BS in Data Science</p></div>
+                        <div class="edu-item"><h4>SJEC Mangaluru</h4><p>BE in Computer Science</p></div>
                     </div>
                 </div>
             </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="section-title">Technical <span>Creations</span></h2>
+            <p class="section-subtitle">Practical applications of AI, algorithms, and full-stack development.</p>
+            <div class="item-grid" id="projects-container"></div>
         </section>
 
         <section id="achievements">
@@ -279,18 +216,9 @@
             <h2 class="section-title">Let's <span>Connect</span></h2>
             <p class="section-subtitle">Reach out across these platforms</p>
             <div class="social-grid">
-                <a href="mailto:25f2001656@ds.study.iitm.ac.in" class="social-card">
-                    <i class="fa-solid fa-envelope"></i>
-                    <strong>Gmail</strong>
-                </a>
-                <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card">
-                    <i class="fa-brands fa-linkedin-in"></i>
-                    <strong>LinkedIn</strong>
-                </a>
-                <a href="https://github.com/chirag-exists" target="_blank" class="social-card">
-                    <i class="fa-brands fa-github"></i>
-                    <strong>GitHub</strong>
-                </a>
+                <a href="mailto:25f2001656@ds.study.iitm.ac.in" class="social-card"><i class="fa-solid fa-envelope"></i><strong>Gmail</strong></a>
+                <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card"><i class="fa-brands fa-linkedin-in"></i><strong>LinkedIn</strong></a>
+                <a href="https://github.com/chirag-exists" target="_blank" class="social-card"><i class="fa-brands fa-github"></i><strong>GitHub</strong></a>
             </div>
         </section>
     </div>
@@ -303,6 +231,22 @@
                 const response = await fetch('data.json');
                 const data = await response.json();
                 
+                // Load Projects
+                if (data.projects) {
+                    document.getElementById('projects-container').innerHTML = data.projects.map(proj => `
+                        <div class="ach-card">
+                            <div>
+                                <div class="skills-tag-container" style="margin-bottom: 1rem;">
+                                    ${proj.tech ? proj.tech.map(t => `<span class="skill-tag" style="font-size: 0.7rem;">${t}</span>`).join('') : ''}
+                                </div>
+                                <h3>${proj.title}</h3>
+                                <p>${proj.desc}</p>
+                            </div>
+                            <a href="${proj.link}" target="_blank" class="cert-btn">View Source Code →</a>
+                        </div>
+                    `).join('');
+                }
+
                 // Load Achievements
                 document.getElementById('achievements-container').innerHTML = data.achievements.map(ach => `
                     <div class="ach-card">
@@ -323,7 +267,7 @@
                     </div>
                 `).join('');
 
-            } catch (e) { console.error(e); }
+            } catch (e) { console.error("Error loading JSON:", e); }
         }
         window.onload = loadData;
     </script>
