@@ -4,21 +4,21 @@
             "icon": "fa-certificate",
             "badge": "Recognition",
             "title": "Pi-sq Seminar Series Appreciation",
-            "desc": "Awarded for active participation and insights during the 'It’s All in the Prompt!' session under the ML Series Initiative, IIT Madras.",
+            "desc": "Awarded for active participation and technical insights during the 'It’s All in the Prompt!' seminar under the ML Series Initiative, IIT Madras.",
             "link": "https://linkedin.com/in/chirag-alva-32b500375/"
         },
         {
             "icon": "fa-cloud",
             "badge": "Cloud Computing",
             "title": "Google Cloud Skills Boost",
-            "desc": "Earned over 20+ professional badges across various Google Cloud labs, focusing on infrastructure and data processing.",
-            "link": "https://www.cloudskillsboost.google/public_profiles/YOUR_PROFILE_ID"
+            "desc": "Earned over 20+ professional badges in cloud infrastructure, data processing, and AI labs through the Google Developers program.",
+            "link": "https://developers.google.com/profile/u/107351941614381072848"
         },
         {
             "icon": "fa-microchip",
             "badge": "AI Optimization",
             "title": "Prompt Engineering Mastery",
-            "desc": "Completed intensive training on optimizing LLM outputs and precision engineering through Waynad House initiatives.",
+            "desc": "Completed intensive training on optimizing LLM outputs and precision engineering through Waynad House initiatives, IITM BS.",
             "link": "https://linkedin.com/in/chirag-alva-32b500375/"
         },
         {
@@ -26,13 +26,13 @@
             "badge": "Cybersecurity",
             "title": "OSINT & Digital Investigation",
             "desc": "Proficiency in Open Source Intelligence and cybersecurity investigations through the IIT Madras BS program.",
-            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+            "link": "https://www.linkedin.com/posts/chirag-alva-32b500375_osint-cybersecurity-iitmadras-activity-7367486089789390849-oqjR"
         },
         {
             "icon": "fa-shield-halved",
             "badge": "Workshop",
             "title": "Web Trapped: Cybersecurity 101",
-            "desc": "Successfully completed the vulnerability assessment series organized by Sundarbans House, IITM BS.",
+            "desc": "Successfully completed the vulnerability assessment series organized by Sundarbans House, IITM BS Degree programme.",
             "link": "https://linkedin.com/in/chirag-alva-32b500375/"
         }
     ],
