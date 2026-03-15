@@ -1,4 +1,24 @@
-{
+{   
+    "projects": [
+        {
+            "title": "A* Pathfinding Visualizer",
+            "desc": "An interactive tool developed to visualize the A* search algorithm, helping users understand how pathfinding logic finds the most efficient route.",
+            "tech": ["Python", "Algorithms"],
+            "link": "https://github.com/chirag-exists/A-Star-Pathfinding"
+        },
+        {
+            "title": "Finance Lens (Finaura)",
+            "desc": "A comprehensive personal finance management application designed to track expenses and provide insights into spending habits.",
+            "tech": ["Web Dev", "Data Visualization"],
+            "link": "https://github.com/chirag-exists/Finaura"
+        },
+        {
+            "title": "Abhyas",
+            "desc": "A student helper mobile application built to streamline academic tasks and organization, developed using Firebase Studio.",
+            "tech": ["Firebase", "Mobile Dev"],
+            "link": "https://github.com/chirag-exists/Abhyas_"
+        }
+    ],
     "achievements": [
         {
             "icon": "fa-certificate",
