@@ -115,6 +115,7 @@
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            min-height: 280px;
         }
         .ach-card:hover { transform: translateY(-10px); border-color: var(--primary); }
         .ach-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 1.5rem; }
@@ -164,14 +165,13 @@
 
     <div class="container">
         
-        <!-- SECTION 1: PROFILE -->
         <section id="profile">
             <div class="profile-card">
                 <div>
                     <span class="badge">Data Science & AI Aspirant</span>
                     <h1 style="font-size: 3.5rem; line-height: 1.1; margin-bottom: 1.5rem;">Hi, I'm Chirag.</h1>
                     <p style="color: var(--text-dim); margin-bottom: 2rem; font-size: 1.1rem;">
-                        As a BS student at <strong>IIT Madras</strong>, I am focused on the transformative potential of <strong>Prompt Engineering</strong>, Data Science, and AI. Beyond technical research, I am a poet and a <strong>hobby reader</strong> for a translation group, blending creative introspection with global collaboration.
+                        As a BS student at <strong>IIT Madras</strong>, I am focused on the transformative potential of <strong>Prompt Engineering</strong>, Data Science, and AI. Beyond technical research, I am a poet and a <strong>hobby reader</strong> for a translation group.
                     </p>
                     
                     <div class="edu-grid">
@@ -208,44 +208,13 @@
             </div>
         </section>
 
-        <!-- SECTION 2: ACHIEVEMENTS -->
         <section id="achievements">
             <h2 class="section-title">Academic & Professional <span>Milestones</span></h2>
-            <div class="ach-grid">
-                <!-- NEW ACHIEVEMENT: PROMPT ENGINEERING -->
-                <div class="ach-card">
-                    <i class="fa-solid fa-microchip"></i>
-                    <span class="badge">AI Optimization</span>
-                    <h3>Prompt Engineering Mastery</h3>
-                    <p>
-                        Completed the intensive seminar "It's all in the prompt! The secret to better LLM outputs" organized by the ML series initiative under Waynad House, IITM BS. Focused on optimizing model responses and precision.
-                    </p>
-                </div>
-
-                <!-- NEW ACHIEVEMENT: OSINT -->
-                <div class="ach-card">
-                    <i class="fa-solid fa-magnifying-glass-chart"></i>
-                    <span class="badge">Cybersecurity</span>
-                    <h3>OSINT & Digital Investigation</h3>
-                    <p>
-                        Recognized for active participation and proficiency in Open Source Intelligence (OSINT) and cybersecurity investigations through the IIT Madras BS program initiatives.
-                    </p>
-                    <a href="https://www.linkedin.com/posts/chirag-alva-32b500375_osint-cybersecurity-iitmadras-activity-7367486089789390849-oqjR" target="_blank" class="cert-btn">View on LinkedIn →</a>
-                </div>
-
-                <!-- PREVIOUS ACHIEVEMENT: CYBER 101 -->
-                <div class="ach-card">
-                    <i class="fa-solid fa-shield-halved"></i>
-                    <span class="badge">Workshop</span>
-                    <h3>Cybersecurity 101</h3>
-                    <p>
-                        Successfully completed the "Web Trapped" workshop series organized by Sundarbans House IITM BS Degree programme, covering fundamental vulnerability assessment.
-                    </p>
-                </div>
+            <div class="ach-grid" id="achievements-container">
+                <p style="text-align: center; color: var(--text-dim);">Loading achievements...</p>
             </div>
         </section>
 
-        <!-- SECTION 3: SOCIALS -->
         <section id="socials">
             <h2 class="section-title">Digital <span>Presence</span></h2>
             <div class="social-grid">
@@ -272,5 +241,39 @@
         <p>&copy; 2026 Chirag Alva | IIT Madras & SJEC</p>
     </footer>
 
+    <script>
+        async function loadAchievements() {
+            try {
+                const response = await fetch('data.json');
+                if (!response.ok) throw new Error('Could not find data.json');
+                
+                const data = await response.json();
+                const container = document.getElementById('achievements-container');
+
+                container.innerHTML = data.achievements.map(ach => `
+                    <div class="ach-card">
+                        <div>
+                            <i class="fa-solid ${ach.icon}"></i>
+                            <br>
+                            <span class="badge">${ach.badge}</span>
+                            <h3>${ach.title}</h3>
+                            <p>${ach.desc}</p>
+                        </div>
+                        ${ach.link && ach.link !== "#" ? 
+                            `<a href="${ach.link}" target="_blank" class="cert-btn">View Milestone →</a>` : 
+                            ''}
+                    </div>
+                `).join('');
+            } catch (error) {
+                console.error('Error:', error);
+                document.getElementById('achievements-container').innerHTML = 
+                    `<p style="color: #ef4444;">Error loading data. Ensure you are using a local server.</p>`;
+            }
+        }
+
+        window.onload = loadAchievements;
+    </script>
+
 </body>
 </html>
+
