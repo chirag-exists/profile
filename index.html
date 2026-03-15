@@ -75,7 +75,6 @@
         
         .section-subtitle { color: var(--text-dim); margin-bottom: 4rem; font-size: 1.1rem; }
 
-        /* Profile Header */
         .profile-content h1 { font-size: 5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
         
         .badge {
@@ -91,12 +90,11 @@
             border: 1px solid var(--border); backdrop-filter: blur(5px);
         }
 
-        /* Modern Card Styling */
         .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 2rem; }
         
         .ach-card {
             background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
             border: 1px solid var(--border); border-radius: 1.25rem; 
             padding: 2.5rem; transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             display: flex; flex-direction: column; justify-content: space-between;
@@ -113,12 +111,6 @@
         .ach-card p { color: var(--text-secondary); font-size: 0.95rem; line-height: 1.7; }
         .ach-card i { font-size: 2.5rem; color: var(--primary); margin-bottom: 1.5rem; }
 
-        .skills-tag-container { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
-        .skill-tag { 
-            background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border); 
-            padding: 0.3rem 0.8rem; border-radius: 0.5rem; font-size: 0.7rem; color: var(--accent);
-        }
-
         .cert-btn { 
             margin-top: 1.5rem; color: var(--primary); text-decoration: none; 
             font-weight: 700; font-size: 0.85rem; display: flex; align-items: center; gap: 0.5rem;
@@ -126,7 +118,6 @@
 
         .poem-card { border-left: 5px solid var(--primary); }
 
-        /* Social Cards */
         .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; }
         .social-card {
             background: rgba(255, 255, 255, 0.03); padding: 2rem; border-radius: 1rem; 
@@ -179,9 +170,105 @@
         <section id="projects">
             <h2 class="section-title">Technical <span>Creations</span></h2>
             <p class="section-subtitle">Code, algorithms, and full-stack solutions.</p>
-            <div class="item-grid" id="projects-container"></div>
+            <div class="item-grid" id="projects-container">
+                </div>
         </section>
 
         <section id="achievements">
-            <h2 class="
+            <h2 class="section-title">Key <span>Milestones</span></h2>
+            <p class="section-subtitle">Certifications and recognitions in AI and Tech.</p>
+            <div class="item-grid" id="achievements-container">
+                </div>
+        </section>
 
+        <section id="poetry">
+            <h2 class="section-title">Literary <span>Echoes</span></h2>
+            <p class="section-subtitle">Creative expressions from "Echoes of the Equinox".</p>
+            <div class="item-grid" id="poetry-container">
+                </div>
+        </section>
+
+        <section id="socials">
+            <h2 class="section-title">Connect with <span>Me</span></h2>
+            <div class="social-grid">
+                <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card">
+                    <i class="fab fa-linkedin"></i><p>LinkedIn</p>
+                </a>
+                <a href="https://github.com/chiragalva" target="_blank" class="social-card">
+                    <i class="fab fa-github"></i><p>GitHub</p>
+                </a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Chirag Alva. Built with Code & Poetry.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+2. data.json (Updated with your Projects)
+I added your "Finance Lens" and "A* Pathfinding" projects into the projects array so they show up on the page.
+
+JSON
+{
+    "projects": [
+        {
+            "title": "Finance Lens",
+            "desc": "A comprehensive web application for financial tracking and analytics, developed as a student solution.",
+            "tech": ["Web Dev", "Full-Stack"],
+            "link": "https://github.com/chiragalva"
+        },
+        {
+            "title": "A* Pathfinding Visualizer",
+            "desc": "A visual tool to demonstrate the A* search algorithm's efficiency in finding the shortest path between nodes.",
+            "tech": ["Algorithms", "Python/JS"],
+            "link": "https://github.com/chiragalva"
+        }
+    ],
+    "achievements": [
+        {
+            "icon": "fa-certificate",
+            "badge": "Recognition",
+            "title": "Pi-sq Seminar Series Appreciation",
+            "desc": "Awarded for active participation and technical insights during the 'It’s All in the Prompt!' seminar under the ML Series Initiative, IIT Madras.",
+            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+        },
+        {
+            "icon": "fa-cloud",
+            "badge": "Cloud Computing",
+            "title": "Google Cloud Skills Boost",
+            "desc": "Earned over 20+ professional badges in cloud infrastructure, data processing, and AI labs through the Google Developers program.",
+            "link": "https://developers.google.com/profile/u/107351941614381072848"
+        },
+        {
+            "icon": "fa-microchip",
+            "badge": "AI Optimization",
+            "title": "Prompt Engineering Mastery",
+            "desc": "Completed intensive training on optimizing LLM outputs and precision engineering through Waynad House initiatives, IITM BS.",
+            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+        },
+        {
+            "icon": "fa-magnifying-glass-chart",
+            "badge": "Cybersecurity",
+            "title": "OSINT & Digital Investigation",
+            "desc": "Proficiency in Open Source Intelligence and cybersecurity investigations through the IIT Madras BS program.",
+            "link": "https://www.linkedin.com/posts/chirag-alva-32b500375_osint-cybersecurity-iitmadras-activity-7367486089789390849-oqjR"
+        },
+        {
+            "icon": "fa-shield-halved",
+            "badge": "Workshop",
+            "title": "Web Trapped: Cybersecurity 101",
+            "desc": "Successfully completed the vulnerability assessment series organized by Sundarbans House, IITM BS Degree programme.",
+            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+        }
+    ],
+    "poetry": [
+        {
+            "title": "Echoes of the Equinox",
+            "excerpt": "Exploring the crucial moments when love shifts and transforms—bold yet delicate, fierce yet tender, fleeting yet eternal.",
+            "link": "https://docs.google.com/document/d/140vlyvVg3yMZcxzpb8_ipW7bhmwJ7ckLHM-IfmGa2FM/edit"
+        }
+    ]
+}
