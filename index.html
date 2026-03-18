@@ -3,124 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chirag Alva | Portfolio</title>
+    <title>Chirag Alva | Data Science & AI Portfolio</title>
+    <meta name="description" content="Chirag Alva — Data Science & AI aspirant at IIT Madras. Portfolio showcasing projects in pathfinding, finance, and mobile development, plus achievements in prompt engineering, OSINT, and cloud computing.">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Chirag Alva | Portfolio">
+    <meta property="og:description" content="Data Science & AI aspirant at IIT Madras. Exploring prompt engineering, cybersecurity, and creative writing.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://chirag-exists.github.io/">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+    
+    <!-- Fonts & Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <style>
-        :root {
-            --primary: #6366f1;
-            --accent: #0ea5e9;
-            --bg-dark: #0a0e27;
-            --bg-secondary: #161b33;
-            --border: rgba(255, 255, 255, 0.1);
-            --text-main: #f1f5f9;
-            --text-secondary: #cbd5e1;
-            --text-dim: #94a3b8;
-        }
-
-        * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background: #0a0e27;
-            color: var(--text-main);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        nav {
-            position: fixed; width: 100%; padding: 1.2rem 2rem; display: flex;
-            justify-content: space-between; align-items: center; z-index: 1000;
-            background: rgba(10, 14, 39, 0.8); backdrop-filter: blur(12px); 
-            border-bottom: 1px solid var(--border);
-        }
-
-        .logo { font-weight: 800; font-size: 1.4rem; }
-        .logo span { color: var(--primary); }
-        h2 span { color: var(--primary); }
-
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
-
-        section { padding: 8rem 0 4rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
-        section.visible { opacity: 1; transform: translateY(0); }
-
-        /* Hero Layout */
-        .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
-        
-        .badge-main {
-            background: rgba(99, 102, 241, 0.15); color: #818cf8;
-            padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 700; font-size: 0.7rem;
-            display: inline-block; margin-bottom: 1.5rem; text-transform: uppercase;
-        }
-
-        .hero-content h1 { font-size: 4.5rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -2px; }
-        .hero-content p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; }
-
-        .edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-        .edu-card { background: var(--bg-secondary); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border); }
-        .edu-card h4 { color: var(--accent); margin-bottom: 0.5rem; }
-
-        /* Sidebar Cards */
-        .sidebar-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; margin-bottom: 2rem; }
-        .sidebar-card h3 { font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 700; }
-        
-        .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--text-secondary); }
-        .contact-item i { color: var(--primary); }
-
-        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
-        .tag { background: #0f172a; border: 1px solid var(--border); padding: 0.6rem 1.2rem; border-radius: 0.75rem; font-size: 0.85rem; }
-
-        /* Item Grid for Projects/Achievements */
-        .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
-        .ach-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; transition: 0.3s; }
-        .ach-card:hover { border-color: var(--primary); transform: translateY(-5px); }
-
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 2rem;
-        }
-
-        /* Socials Section */
-        .social-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .social-card {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 1.25rem;
-            padding: 2rem;
-            display: flex;
-            align-items: center;
-            gap: 1.5rem;
-            text-decoration: none;
-            color: var(--text-main);
-            transition: all 0.3s ease;
-        }
-
-        .social-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--primary);
-        }
-        .social-card i { font-size: 2rem; color: var(--accent); }
-        .social-card span { font-size: 1.1rem; font-weight: 600; }
-
-        @media (max-width: 968px) {
-            .hero-grid { grid-template-columns: 1fr; }
-            .hero-content h1 { font-size: 3rem; }
-        }
-    </style>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav>
+    <nav id="navbar">
         <div class="logo">CHIRAG<span>ALVA</span></div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#poetry">Poetry</a></li>
+            <li><a href="#socials">Connect</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
     </nav>
 
     <div class="container">
+        <!-- ===== Hero / Profile ===== -->
         <section id="profile" class="visible">
             <div class="hero-grid">
                 <div class="hero-content">
@@ -131,7 +52,16 @@
                         <strong>Prompt Engineering</strong>, Data Science, and AI. Beyond technical research, I am a poet 
                         and a <strong>hobby reader</strong> for a translation group.
                     </p>
-                    
+
+                    <div class="hero-actions">
+                        <a href="mailto:chiragalva2007@gmail.com" class="btn-primary">
+                            <i class="fas fa-envelope"></i> Get In Touch
+                        </a>
+                        <a href="#projects" class="btn-outline">
+                            <i class="fas fa-code"></i> View Projects
+                        </a>
+                    </div>
+
                     <div class="edu-row">
                         <div class="edu-card">
                             <h4>IIT Madras</h4>
@@ -149,53 +79,85 @@
                         <h3>Connect Directly</h3>
                         <div class="contact-item"><i class="fas fa-location-dot"></i> Mangaluru, Karnataka</div>
                         <div class="contact-item"><i class="fas fa-phone"></i> +91 90195 30402</div>
-                        <div class="contact-item"><i class="fas fa-envelope"></i> chiragalva2005@gmail.com</div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i> chiragalva2007@gmail.com</div>
                     </div>
 
                     <div class="sidebar-card" style="background: transparent; border: none; padding: 0;">
                         <h3>Core Expertise</h3>
                         <div class="skill-tags">
-                            <span class="tag">Prompt Engineering</span>
-                            <span class="tag">OSINT Investigation</span>
-                            <span class="tag">Data Analysis</span>
-                            <span class="tag">Cybersecurity</span>
-                            <span class="tag">Python</span>
-                            <span class="tag">AI/ML</span>
+                            <span class="tag" data-cat="ai">Prompt Engineering</span>
+                            <span class="tag" data-cat="cyber">OSINT Investigation</span>
+                            <span class="tag" data-cat="data">Data Analysis</span>
+                            <span class="tag" data-cat="cyber">Cybersecurity</span>
+                            <span class="tag" data-cat="code">Python</span>
+                            <span class="tag" data-cat="ai">AI/ML</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- ===== Projects ===== -->
         <section id="projects">
             <h2 class="section-title">Technical <span>Creations</span></h2>
-            <div class="item-grid" id="projects-container"></div>
+            <p class="section-subtitle">Projects I've built to solve real-world problems and learn new technologies.</p>
+            <div class="item-grid" id="projects-container">
+                <!-- Skeleton loaders shown while data loads -->
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+            </div>
         </section>
 
+        <!-- ===== Achievements ===== -->
         <section id="achievements">
             <h2 class="section-title">Key <span>Milestones</span></h2>
-            <div class="item-grid" id="achievements-container"></div>
+            <p class="section-subtitle">Certifications, recognitions, and milestones along the way.</p>
+            <div class="item-grid" id="achievements-container">
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+            </div>
         </section>
 
+        <!-- ===== Poetry ===== -->
+        <section id="poetry">
+            <h2 class="section-title">Code & <span>Verse</span></h2>
+            <p class="section-subtitle">Where logic meets language — my creative writing corner.</p>
+            <div class="poetry-grid" id="poetry-container">
+                <div class="skeleton-card"><div class="skeleton-line short"></div><div class="skeleton-line long"></div><div class="skeleton-line medium"></div></div>
+            </div>
+        </section>
+
+        <!-- ===== Socials ===== -->
         <section id="socials">
             <h2 class="section-title">Connect with <span>Me</span></h2>
+            <p class="section-subtitle">Let's collaborate, chat, or just say hello.</p>
             <div class="social-grid">
-                <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card">
-                    <i class="fab fa-linkedin"></i><span>LinkedIn</span>
+                <a href="https://linkedin.com/in/chirag-alva-32b500375/" target="_blank" class="social-card" aria-label="Visit LinkedIn Profile">
+                    <div class="social-icon"><i class="fab fa-linkedin"></i></div>
+                    <div><span>LinkedIn</span><small>Professional Network</small></div>
                 </a>
-                <a href="https://github.com/chirag-exists" target="_blank" class="social-card">
-                    <i class="fab fa-github"></i><span>GitHub</span>
+                <a href="https://github.com/chirag-exists" target="_blank" class="social-card" aria-label="Visit GitHub Profile">
+                    <div class="social-icon"><i class="fab fa-github"></i></div>
+                    <div><span>GitHub</span><small>Code & Projects</small></div>
                 </a>
-                <a href="mailto:25f2001656@ds.study.iitm.ac.in" class="social-card">
-                    <i class="fas fa-envelope"></i><span>Email</span>
+                <a href="mailto:25f2001656@ds.study.iitm.ac.in" class="social-card" aria-label="Send an Email">
+                    <div class="social-icon"><i class="fas fa-envelope"></i></div>
+                    <div><span>Email</span><small>Academic Contact</small></div>
                 </a>
             </div>
         </section>
     </div>
-    g
+    
     <footer>
-        <p>&copy; 2026 Chirag Alva. Built with Code & Poetry.</p>
+        <p>&copy; 2026 Chirag Alva. Built with Code <span class="footer-heart">&hearts;</span> Poetry.</p>
     </footer>
+
+    <!-- Scroll to top -->
+    <button class="scroll-top" id="scrollTopBtn" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="script.js"></script>
 </body>
