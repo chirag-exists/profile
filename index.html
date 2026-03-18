@@ -12,7 +12,7 @@
             --primary: #6366f1;
             --accent: #0ea5e9;
             --bg-dark: #0a0e27;
-            --bg-secondary: #1a1f3a;
+            --bg-secondary: #161b33;
             --border: rgba(255, 255, 255, 0.1);
             --text-main: #f1f5f9;
             --text-secondary: #cbd5e1;
@@ -22,19 +22,11 @@
         * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
 
         body {
-            font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
-            background: linear-gradient(-45deg, #0a0e27, #1a1f3a, #0f172a, #1e1b4b);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background: #0a0e27;
             color: var(--text-main);
             line-height: 1.6;
             overflow-x: hidden;
-        }
-
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
         }
 
         nav {
@@ -44,105 +36,134 @@
             border-bottom: 1px solid var(--border);
         }
 
-        .logo { font-weight: 800; font-size: 1.4rem; letter-spacing: -0.5px; }
+        .logo { font-weight: 800; font-size: 1.4rem; }
         .logo span { color: var(--primary); }
-
-        .nav-links { display: flex; gap: 2.5rem; }
-        .nav-links a { 
-            color: var(--text-secondary); text-decoration: none; font-size: 0.9rem; 
-            font-weight: 500; transition: 0.3s ease; 
-        }
-        .nav-links a:hover { color: var(--primary); }
+        h2 span { color: var(--primary); }
 
         .container { max-width: 1200px; margin: 0 auto; padding: 0 2rem; }
 
-        section { 
-            padding: 8rem 0 4rem; 
-            opacity: 0; 
-            transform: translateY(30px); 
-            transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        
+        section { padding: 8rem 0 4rem; opacity: 0; transform: translateY(30px); transition: all 0.8s ease; }
         section.visible { opacity: 1; transform: translateY(0); }
 
-        .section-title { 
-            font-size: 3.5rem; margin-bottom: 0.5rem; font-weight: 800; letter-spacing: -1.5px; 
-        }
-        .section-title span { 
-            background: linear-gradient(to right, var(--primary), var(--accent));
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-        }
+        /* Hero Layout */
+        .hero-grid { display: grid; grid-template-columns: 1.5fr 1fr; gap: 3rem; align-items: start; }
         
-        .section-subtitle { color: var(--text-dim); margin-bottom: 4rem; font-size: 1.1rem; }
-
-        .profile-content h1 { font-size: 5rem; font-weight: 800; margin-bottom: 1rem; letter-spacing: -2px; }
-        
-        .badge {
-            background: linear-gradient(90deg, rgba(99, 102, 241, 0.1), rgba(14, 165, 233, 0.1));
-            color: var(--text-main); border: 1px solid var(--primary);
-            padding: 0.4rem 1rem; border-radius: 2rem; font-weight: 600; font-size: 0.75rem;
+        .badge-main {
+            background: rgba(99, 102, 241, 0.15); color: #818cf8;
+            padding: 0.5rem 1rem; border-radius: 2rem; font-weight: 700; font-size: 0.7rem;
             display: inline-block; margin-bottom: 1.5rem; text-transform: uppercase;
         }
 
-        .edu-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
-        .edu-item { 
-            background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 1rem; 
-            border: 1px solid var(--border); backdrop-filter: blur(5px);
-        }
+        .hero-content h1 { font-size: 4.5rem; font-weight: 800; margin-bottom: 1.5rem; letter-spacing: -2px; }
+        .hero-content p { font-size: 1.15rem; color: var(--text-secondary); margin-bottom: 2rem; max-width: 600px; }
 
-        .location-info { margin-top: 2rem; color: var(--text-secondary); font-size: 0.95rem; }
+        .edu-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 2rem; }
+        .edu-card { background: var(--bg-secondary); padding: 1.5rem; border-radius: 1rem; border: 1px solid var(--border); }
+        .edu-card h4 { color: var(--accent); margin-bottom: 0.5rem; }
 
-        .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        /* Sidebar Cards */
+        .sidebar-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; margin-bottom: 2rem; }
+        .sidebar-card h3 { font-size: 1.1rem; margin-bottom: 1.5rem; font-weight: 700; }
         
-        .ach-card {
-            background: rgba(255, 255, 255, 0.03); 
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--border); border-radius: 1.25rem; 
-            padding: 2rem; transition: 0.4s;
-            display: flex; flex-direction: column; justify-content: space-between;
+        .contact-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; color: var(--text-secondary); }
+        .contact-item i { color: var(--primary); }
+
+        .skill-tags { display: flex; flex-wrap: wrap; gap: 0.75rem; }
+        .tag { background: #0f172a; border: 1px solid var(--border); padding: 0.6rem 1.2rem; border-radius: 0.75rem; font-size: 0.85rem; }
+
+        /* Item Grid for Projects/Achievements */
+        .item-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 2rem; }
+        .ach-card { background: var(--bg-secondary); border: 1px solid var(--border); border-radius: 1.25rem; padding: 2rem; transition: 0.3s; }
+        .ach-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
         }
 
-        .ach-card:hover { transform: translateY(-10px); border-color: var(--primary); background: rgba(99, 102, 241, 0.08); }
-        .ach-card i { font-size: 2rem; color: var(--primary); margin-bottom: 1rem; }
+        /* Socials Section */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
 
-        .social-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1.5rem; }
         .social-card {
-            background: rgba(255, 255, 255, 0.03); padding: 1.5rem; border-radius: 1rem; 
-            text-align: center; text-decoration: none; color: var(--text-main); 
-            border: 1px solid var(--border); transition: 0.3s;
+            background: var(--bg-secondary);
+            border: 1px solid var(--border);
+            border-radius: 1.25rem;
+            padding: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            text-decoration: none;
+            color: var(--text-main);
+            transition: all 0.3s ease;
         }
-        .social-card i { font-size: 1.5rem; margin-bottom: 0.5rem; display: block; }
-        .social-card:hover { background: var(--primary); transform: translateY(-5px); }
 
-        footer { text-align: center; padding: 4rem 0; color: var(--text-dim); border-top: 1px solid var(--border); }
+        .social-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+        .social-card i { font-size: 2rem; color: var(--accent); }
+        .social-card span { font-size: 1.1rem; font-weight: 600; }
+
+        @media (max-width: 968px) {
+            .hero-grid { grid-template-columns: 1fr; }
+            .hero-content h1 { font-size: 3rem; }
+        }
     </style>
 </head>
 <body>
 
     <nav>
         <div class="logo">CHIRAG<span>ALVA</span></div>
-        <div class="nav-links">
-            <a href="#profile">Profile</a>
-            <a href="#projects">Projects</a>
-            <a href="#achievements">Achievements</a>
-            <a href="#poetry">Poetry</a>
-            <a href="#socials">Connect</a>
-        </div>
     </nav>
 
     <div class="container">
         <section id="profile" class="visible">
-            <div class="profile-content">
-                <span class="badge">Data Science & AI Enthusiast</span>
-                <h1>Hi, I'm Chirag.</h1>
-                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 700px; margin-bottom: 2.5rem;">
-                     As a BS student at <strong>IIT Madras</strong>, I am focused on the transformative potential of <strong>Prompt Engineering</strong>, Data Science, and AI. Beyond technical research, I am like composing new poems  and a <strong>hobby reader</strong> for a translation group.
-                </p>
-                <div class="edu-grid" style="max-width: 600px;">
-                    <div class="edu-item"><h4>IIT Madras</h4><p>BS in Data Science</p></div>
-                    <div class="edu-item"><h4>SJEC Mangaluru</h4><p>BE in Computer Science</p></div>
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="badge-main">Data Science & AI Aspirant</span>
+                    <h1>Hi, I'm Chirag.</h1>
+                    <p>
+                        As a BS student at <strong>IIT Madras</strong>, I am focused on the transformative potential of 
+                        <strong>Prompt Engineering</strong>, Data Science, and AI. Beyond technical research, I am a poet 
+                        and a <strong>hobby reader</strong> for a translation group.
+                    </p>
+                    
+                    <div class="edu-row">
+                        <div class="edu-card">
+                            <h4>IIT Madras</h4>
+                            <p>BS in Data Science & Applications<br><small>2025 — 2029</small></p>
+                        </div>
+                        <div class="edu-card">
+                            <h4>SJEC Mangaluru</h4>
+                            <p>BE in Computer Science<br><small>Undergraduate Studies</small></p>
+                        </div>
+                    </div>
                 </div>
-                <p class="location-info"><strong>📍 Mangaluru, Karnataka</strong></p>
+
+                <div class="sidebar">
+                    <div class="sidebar-card">
+                        <h3>Connect Directly</h3>
+                        <div class="contact-item"><i class="fas fa-location-dot"></i> Mangaluru, Karnataka</div>
+                        <div class="contact-item"><i class="fas fa-phone"></i> +91 90195 30402</div>
+                        <div class="contact-item"><i class="fas fa-envelope"></i> chiragalva2005@gmail.com</div>
+                    </div>
+
+                    <div class="sidebar-card" style="background: transparent; border: none; padding: 0;">
+                        <h3>Core Expertise</h3>
+                        <div class="skill-tags">
+                            <span class="tag">Prompt Engineering</span>
+                            <span class="tag">OSINT Investigation</span>
+                            <span class="tag">Data Analysis</span>
+                            <span class="tag">Cybersecurity</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">AI/ML</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
 
@@ -154,11 +175,6 @@
         <section id="achievements">
             <h2 class="section-title">Key <span>Milestones</span></h2>
             <div class="item-grid" id="achievements-container"></div>
-        </section>
-
-        <section id="poetry">
-            <h2 class="section-title">Literary <span>Echoes</span></h2>
-            <div class="item-grid" id="poetry-container"></div>
         </section>
 
         <section id="socials">
@@ -173,13 +189,10 @@
                 <a href="mailto:25f2001656@ds.study.iitm.ac.in" class="social-card">
                     <i class="fas fa-envelope"></i><span>Email</span>
                 </a>
-                <a href="tel:+919019530402" class="social-card">
-                    <i class="fas fa-phone"></i><span>+91 9019530402</span>
-                </a>
             </div>
         </section>
     </div>
-
+    g
     <footer>
         <p>&copy; 2026 Chirag Alva. Built with Code & Poetry.</p>
     </footer>
