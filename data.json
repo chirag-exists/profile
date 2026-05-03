@@ -1,10 +1,72 @@
-{
-  "achievements": [
-    {
-      "title": "2nd Runner up in PAETRIX Hack summit",
-      "icon": "fa-trophy",
-      "badge": "Competition",
-      "link": "https://www.linkedin.com/posts/chirag-alva-32b500375_iot-simulation-engineering-ugcPost-7455916355381379072-GC3X?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFzNDdMBFuhvyFUMBK8gS68YWiHH4EeYzds"
-    }
-  ]
+{   
+    "projects": [
+        {
+            "title": "A* Pathfinding Visualizer",
+            "desc": "An interactive tool developed to visualize the A* search algorithm, helping users understand how pathfinding logic finds the most efficient route.",
+            "tech": ["Python", "Algorithms"],
+            "link": "https://github.com/chirag-exists/A-Star-Pathfinding"
+        },
+        {
+            "title": "Finance Lens (Finaura)",
+            "desc": "A comprehensive personal finance management application designed to track expenses and provide insights into spending habits.",
+            "tech": ["Web Dev", "Data Visualization"],
+            "link": "https://github.com/chirag-exists/Finaura"
+        },
+        {
+            "title": "Abhyas",
+            "desc": "A student helper mobile application built to streamline academic tasks and organization, developed using Firebase Studio.",
+            "tech": ["Firebase", "Mobile Dev"],
+            "link": "https://github.com/chirag-exists/Abhyas_"
+        }
+    ],
+    "achievements": [
+        {
+            "title": "2nd Runner up in PAETRIX Hack summit",
+            "icon": "fa-trophy",
+            "badge": "Competition",
+            "link": "https://www.linkedin.com/posts/chirag-alva-32b500375_iot-simulation-engineering-ugcPost-7455916355381379072-GC3X?utm_source=social_share_send&utm_medium=member_desktop_web&rcm=ACoAAFzNDdMBFuhvyFUMBK8gS68YWiHH4EeYzds"
+        },
+        {
+            "icon": "fa-certificate",
+            "badge": "Recognition",
+            "title": "Pi-sq Seminar Series Appreciation",
+            "desc": "Awarded for active participation and technical insights during the 'It’s All in the Prompt!' seminar under the ML Series Initiative, IIT Madras.",
+            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+        },
+        {
+            "icon": "fa-cloud",
+            "badge": "Cloud Computing",
+            "title": "Google Cloud Skills Boost",
+            "desc": "Earned over 20+ professional badges in cloud infrastructure, data processing, and AI labs through the Google Developers program.",
+            "link": "https://developers.google.com/profile/u/107351941614381072848"
+        },
+        {
+            "icon": "fa-microchip",
+            "badge": "AI Optimization",
+            "title": "Prompt Engineering Mastery",
+            "desc": "Completed intensive training on optimizing LLM outputs and precision engineering through Waynad House initiatives, IITM BS.",
+            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+        },
+        {
+            "icon": "fa-magnifying-glass-chart",
+            "badge": "Cybersecurity",
+            "title": "OSINT & Digital Investigation",
+            "desc": "Proficiency in Open Source Intelligence and cybersecurity investigations through the IIT Madras BS program.",
+            "link": "https://www.linkedin.com/posts/chirag-alva-32b500375_osint-cybersecurity-iitmadras-activity-7367486089789390849-oqjR"
+        },
+        {
+            "icon": "fa-shield-halved",
+            "badge": "Workshop",
+            "title": "Web Trapped: Cybersecurity 101",
+            "desc": "Successfully completed the vulnerability assessment series organized by Sundarbans House, IITM BS Degree programme.",
+            "link": "https://linkedin.com/in/chirag-alva-32b500375/"
+        }
+    ],
+    "poetry": [
+        {
+            "title": "Echoes of the Equinox",
+            "excerpt": "Exploring the crucial moments when love shifts and transforms—bold yet delicate, fierce yet tender, fleeting yet eternal.",
+            "link": "https://docs.google.com/document/d/140vlyvVg3yMZcxzpb8_ipW7bhmwJ7ckLHM-IfmGa2FM/edit"
+        }
+    ]
 }
